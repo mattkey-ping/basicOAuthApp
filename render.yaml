@@ -1,0 +1,16 @@
+services:
+  - name: pingone-hello
+    type: web
+    runtime: node
+    plan: starter
+    buildCommand: "npm install --omit=dev"
+    startCommand: "node server.js"
+    envVars:
+      - key: APP_URL
+        sync: false
+      - key: OIDC_BASEURL
+        sync: false
+      - key: OIDC_CLIENT_ID
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
